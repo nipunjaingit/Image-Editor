@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Variables</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h2><span class="h1">Javascript</span> Image Editor</h2>
+    <div class="controls">
+        
+        <label for="spacing" id="label">Spacing</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        <label for="blur" id="label">Blur</label>
+        <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+
+        <label for="brightness" id="label">Brightness</label>
+        <input type="range" name="brightness" min="0" max="200" value="100" data-sizing="%">
+
+        <label for="contrast" id="label">Contrast</label>
+        <input type="range" name="contrast" min="0" max="200" value="100" data-sizing="%">
+
+        <label for="grayscale" id="label">Grayscale</label>
+        <input type="range" name="grayscale" min="0" max="200" value="0" data-sizing="%">
+
+        <label for="opacity" id="label">Opacity</label>
+        <input type="range" name="opacity" min="0" max="100" value="100" data-sizing="%"> 
+
+        <label for="saturate" id="label">Saturation</label>
+        <input type="range" name="saturate" min="0" max="10000" value="100" data-sizing="%"> 
+
+        <label for="base" id="label">Base Color</label>
+        <input type="color" name="base" value="#ffc600">
+
+    </div>
+
+    <input type="text" placeholder="Enter an Image Url Here" id="url"/>
+    <button type="button" id="button">Go</button>
+    
+    <div class="image">
+
+    </div>
+
+    <script>
+        const imageDiv = document.querySelector('.image');
+        const url = document.getElementById('url');
+        const button = document.getElementById('button');
+        const controls = document.querySelector('controls');
+        button.addEventListener('click',function(){
+            let output = `
+                <a target="_blank"><img src="${url.value}"/></a>
+            `
+            imageDiv.innerHTML = output;
+        });
+
+        const inputs = document.querySelectorAll('.controls input');
+
+        function handleUpdate(){
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    </script>
+ 
+</body>
+</html>

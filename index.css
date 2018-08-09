@@ -1,0 +1,119 @@
+
+:root{
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 0px;
+    --brightness: 100%;
+    --contrast: 100%;
+    --grayscale: 0%;
+    --opacity: 100%;
+    --saturate: 100%;
+}
+
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: brightness(var(--brightness)) blur(var(--blur)) contrast(var(--contrast)) grayscale(var(--grayscale)) opacity(var(--opacity)) saturate(var(--saturate));
+    max-width: 1000px;
+    max-height: 700px;
+}
+
+.h1{
+    color: var(--base);
+}
+
+.image{
+    padding-top: 100px;
+}
+
+body{
+    text-align: center;
+}
+
+body{
+    background: url(Super-Moon-Cool-Wallpaper-Backgrounds1.jpg);
+    color: white;
+    background-size: cover;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.controls{
+    margin-bottom: 50px;
+    padding: 50px;
+}
+
+#label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--base);
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+a{
+    color: var(--base);
+    text-decoration: none;
+}
+
+#url{
+    width: 60%;
+    border-radius: 10px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    padding-left: 20px;
+    color: white;
+    transition: all 0.5s;
+}
+
+#url:hover{
+    border: 2px solid blue;
+}
+
+
+#url::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    font-style: italic;
+    word-spacing: 10px;
+    opacity: 1; /* Firefox */
+}
+
+#button{
+    background: purple;
+    width: 100px;
+    height: 40px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
